@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Halo
+Comment=Minimalistyczna sesja Halo (Hyprland)
+# @START_HALO@ zamienia install.sh na pełną ścieżkę do ~/.config/halo/session/start-halo
+Exec=@START_HALO@
+# Bez Hyprlanda wpis znika z ekranu logowania
+TryExec=start-hyprland
+Type=Application
+# Ta sama nazwa pulpitu co w zwykłej sesji Hyprlanda: dzięki temu działają
+# portale (xdg-desktop-portal-hyprland) i aplikacje rozpoznają środowisko
+DesktopNames=Hyprland
+Keywords=halo;hyprland;wayland;

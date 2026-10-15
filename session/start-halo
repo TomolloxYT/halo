@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Halo — start sesji. Uruchamia go ekran logowania (wpis „Halo”, plik halo.desktop).
+# Startuje Hyprlanda z konfiguracją Halo zamiast ~/.config/hypr.
+
+set -u
+
+config="$HOME/.config/halo/hypr/hyprland.lua"
+
+# Bez konfiguracji Hyprland utworzyłby własny przykładowy plik. Lepiej zakończyć:
+# wrócisz do ekranu logowania i wybierzesz Plasmę. Komunikat trafi do
+# ~/.local/share/sddm/wayland-session.log.
+if [[ ! -r "$config" ]]; then
+    echo "start-halo: brak pliku $config — uruchom install.sh" >&2
+    exit 1
+fi
+
+# start-hyprland to zalecany sposób startu: pilnuje Hyprlanda i po awarii
+# uruchamia go ponownie w trybie awaryjnym. Argumenty dla Hyprlanda idą po „--”.
+exec start-hyprland -- --config "$config"
