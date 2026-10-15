@@ -1,0 +1,27 @@
+# Halo — powiadomienia (mako 1.11)
+# Uruchamiane z hypr/hyprland.lua: mako --config ~/.config/halo/mako/config
+# Opis opcji: man 5 mako. Kolory z sekcji 10 specyfikacji.
+# Font: Geist; jeśli nie jest zainstalowany, system podstawi zwykły bezszeryfowy.
+
+font=Geist 11
+background-color=#161A1F
+text-color=#E8EAED
+border-color=#FFFFFF1A
+border-size=1
+border-radius=12
+progress-color=over #F4D58D59
+
+width=360
+height=160
+padding=12,16
+margin=12
+max-icon-size=48
+
+anchor=top-right
+# Bez tego mako nigdy nie chowa powiadomień (domyślnie 0 = bez limitu)
+default-timeout=5000
+
+# Pilne powiadomienia: czerwonawy obrys i bez automatycznego znikania
+[urgency=critical]
+border-color=#F2A7A0
+default-timeout=0

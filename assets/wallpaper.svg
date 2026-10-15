@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tapeta Halo: ciemne tło i świetlisty pierścień (aureola) w kolorze akcentu.
+     Źródło dla wallpaper.png — po zmianie wygeneruj PNG:
+     rsvg-convert -w 3840 -h 2160 -o assets/wallpaper.png assets/wallpaper.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
+  <defs>
+    <!-- Delikatne rozjaśnienie środka (kolor powierzchni) -->
+    <radialGradient id="tlo" gradientUnits="userSpaceOnUse" cx="1920" cy="1080" r="2000">
+      <stop offset="0" stop-color="#161A1F"/>
+      <stop offset="1" stop-color="#0E1013"/>
+    </radialGradient>
+    <!-- Szeroka, miękka poświata wokół pierścienia (promień 600, ±200 px) -->
+    <radialGradient id="poswiata" gradientUnits="userSpaceOnUse" cx="1920" cy="1080" r="800">
+      <stop offset="0.5" stop-color="#F4D58D" stop-opacity="0"/>
+      <stop offset="0.75" stop-color="#F4D58D" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#F4D58D" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Wąska, jaśniejsza poświata tuż przy linii (±40 px) -->
+    <radialGradient id="blask" gradientUnits="userSpaceOnUse" cx="1920" cy="1080" r="640">
+      <stop offset="0.875" stop-color="#F4D58D" stop-opacity="0"/>
+      <stop offset="0.9375" stop-color="#F4D58D" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#F4D58D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="3840" height="2160" fill="url(#tlo)"/>
+  <circle cx="1920" cy="1080" r="800" fill="url(#poswiata)"/>
+  <circle cx="1920" cy="1080" r="640" fill="url(#blask)"/>
+  <!-- Sam pierścień -->
+  <circle cx="1920" cy="1080" r="600" fill="none" stroke="#F4D58D" stroke-opacity="0.7" stroke-width="4"/>
+</svg>
